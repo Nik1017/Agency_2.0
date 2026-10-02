@@ -4,6 +4,8 @@ import React from 'react';
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
+import { SectionHeader } from "@/components/common/section-header";
+
 export function BrandsShowcase() {
   
   // Luxury staggered reveal for logos
@@ -56,29 +58,18 @@ export function BrandsShowcase() {
       />
 
       {/* 1. Large section container */}
-      <div className="relative max-w-7xl w-full flex flex-col gap-16 md:gap-24 z-10">
+      <div className="relative max-w-7xl w-full flex flex-col gap-16 md:gap-24 z-10 text-black">
         
-        {/* 2. Section heading area */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col gap-8 md:gap-10 max-w-4xl"
-        >
-           {/* Eyebrow Pill */}
-           <div className="inline-flex items-center self-start px-5 py-2 rounded-full bg-black/5 border border-black/10">
-              <span className="text-[10px] md:text-xs font-mono font-bold tracking-[0.25em] text-black/60 uppercase">
-                + Partnerships
-              </span>
-           </div>
-           
-           {/* Editorial Title */}
-           <h2 className="font-serif text-6xl md:text-8xl lg:text-[110px] leading-[0.9] tracking-[-0.02em] text-[#111111] flex flex-col">
-              <span>Brands We've</span>
-              <span className="italic font-normal text-black/70 md:ml-20 mt-2 md:mt-4">Helped Grow</span>
-           </h2>
-        </motion.div>
+        {/* Global Section Header */}
+        <SectionHeader 
+          eyebrow="+ Partnerships"
+          title={
+            <>
+              Brands We've <br className="hidden md:block" />
+              <span className="italic font-normal opacity-70">Helped Grow</span>
+            </>
+          }
+        />
 
         {/* 3. Showcase area */}
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center bg-white rounded-[40px] md:rounded-[64px] p-8 md:p-16 lg:p-24 shadow-[0_20px_80px_rgba(0,0,0,0.03)] border border-black/[0.02]">
