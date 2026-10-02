@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/hero";
 import { BrandsShowcase } from "@/components/sections/brands-showcase";
 import { ContentEcosystem } from "@/components/sections/content-ecosystem";
+import { ServicesShowcase } from "@/components/sections/services-showcase";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <BrandsShowcase />
       <ContentEcosystem />
+      <ServicesShowcase />
     </main>
   );
 }
