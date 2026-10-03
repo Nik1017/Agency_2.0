@@ -3,6 +3,7 @@ import { Inter, Playfair_Display, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/shared/header";
+import { Footer } from "@/components/shared/footer";
 
 const inter = Inter({ 
   subsets: ["latin"], 
@@ -36,13 +37,16 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={cn(
-        "min-h-screen font-sans antialiased",
+        "min-h-screen font-sans antialiased flex flex-col",
         inter.variable, 
         playfair.variable,
         jetbrainsMono.variable
       )}>
         <Header />
-        {children}
+        <main className="flex-1">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
